@@ -30,3 +30,8 @@ do
       chmod 755 "$filename"
    fi
 done 
+
+curl -s http://api.example.com/stats > api-stats.txt
+awk 'BEGIN { print "<table>" }
+     { print "<tr><td>" $1 "</td><td>" $2 "</td></tr>" }
+     END   { print "</table>" }' api-stats.txt > api-stats.html
