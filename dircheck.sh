@@ -16,3 +16,15 @@ for mount in ${MOUNTS[@]}; do
       echo "$mount is declared in fstab but not mounted"
    fi
 done
+
+# Check file permissions
+for filename in *
+do
+   if [ $(stat -c "%a" "$filename") == "755" ]
+   then
+      echo "File with correct permission: $filename"
+   else
+      echo "File with incorrect permision: $filename"
+      chmod 755 "$filename"
+   fi
+done 
