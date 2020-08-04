@@ -1,6 +1,13 @@
 #!/bin/bash
 
 ## User-Specific Checks
+# id -u <name>
+if id "$1" >/dev/null 2>&1; then
+  echo "User has been created"
+else
+  echo "User has not been created"
+fi
+
 for USER in /home/org/user
 do
   if [[ -f $USER/Desktop ]]
