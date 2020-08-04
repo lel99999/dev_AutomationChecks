@@ -1,4 +1,16 @@
 #!/bin/bash
+
+## User-Specific Checks
+for USER in /home/org/user
+do
+  if [[ -f $USER/Desktop ]]
+  then
+    echo "User has been initialized"
+  else
+    echo "User has not been initialized"
+  fi
+done
+
 for i in $(ls -d /home/<user_specific_path>/*)
 do
 echo ${i%%/};
