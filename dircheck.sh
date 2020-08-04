@@ -18,6 +18,20 @@ do
   fi
 done
 
+## If USER not in /home/<org>/ directory, run a creation script copying over /etc/skel
+## or do initial SSh
+## $ssh-keygen -t rsa -b 2048
+## Generating public/private rsa key pair.
+## Enter file in which to save the key (/home/username/.ssh/id_rsa): 
+## Enter passphrase (empty for no passphrase): 
+## Enter same passphrase again: 
+## Your identification has been saved in /home/username/.ssh/id_rsa.
+## Your public key has been saved in /home/username/.ssh/id_rsa.pub. 
+
+## $ssh-copy-id id@server
+## id@server's password:
+## try $ssh id@server to see if password prompt
+
 for i in $(ls -d /home/<user_specific_path>/*)
 do
 echo ${i%%/};
