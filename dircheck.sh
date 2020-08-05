@@ -19,7 +19,11 @@ do
 done
 
 ## If USER not in /home/<org>/ directory, run a creation script copying over /etc/skel
-## or do initial SSh
+## or do initial SSH
+##
+## SKEL= in /etc/default/useradd
+## contents ... .bash_logout .bash_profile .bashrc
+
 ## $ssh-keygen -t rsa -b 2048
 ## Generating public/private rsa key pair.
 ## Enter file in which to save the key (/home/username/.ssh/id_rsa): 
