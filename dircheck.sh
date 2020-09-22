@@ -18,6 +18,17 @@ do
   fi
 done
 
+# Grep for Additions in .bashrc
+for USER in /home/org/*
+do
+  if [ grep -i "STATTMP" "$USER/.bashrc" ]]
+  then
+    echo "$USER, STATATMP found"
+  else
+    echo "$USER, STATATMP not found"
+  fi
+done
+
 ## If USER not in /home/<org>/ directory, run a creation script copying over /etc/skel
 ## or do initial SSH
 ##
