@@ -5,6 +5,7 @@ Exploratory Development with Automated System Checks and Reporting
 - User Exists <br/>
 - User Creation <br/>
 - User .bashrc and other information created/exits <br/>
+  - within .bashrc STATATMP and crk variables are set <br/.
 
 #### Add Directory Checks
 - Check mounts from /etc/fstab <br/>
