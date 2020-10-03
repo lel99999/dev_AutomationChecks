@@ -5,6 +5,7 @@ Exploratory Development with Automated System Checks and Reporting
 - User Exists <br/>
 - User Creation <br/>
 - User .bashrc and other information created/exits <br/>
+  - within .bashrc STATATMP and crk variables are set <br/.
 
 Issue #142 <br/>
 - Confirm STATA serers are running
