@@ -8,12 +8,12 @@ Exploratory Development with Automated System Checks and Reporting
   - within .bashrc STATATMP and crk variables are set <br/.
 
 Issue #142 <br/>
-- Confirm STATA serers are running
-- Confirm <org>, data,work,work2 mounts are function on _adml06
-- Check no 0kb duplicate files exists
-- Check SASStudio is funcioning correctly
-- Cehck RStudio is functioning correctly
-- Check mounts on _adml06'
+- Confirm STATA serers are running<br/>
+- Confirm <org>, data,work,work2 mounts are function on _adml06<br/>
+- Check no 0kb duplicate files exists<br/>
+- Check SASStudio is funcioning correctly<br/>
+- Cehck RStudio is functioning correctly<br/>
+- Check mounts on _adml06'<br/>
 
 Issue #159 <br/>
 - Check .bashrc for existence/defined crk and STATATMP <br/>
