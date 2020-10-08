@@ -22,4 +22,7 @@ Issue #159 <br/>
 #### Add Directory Checks
 - Check mounts from /etc/fstab <br/>
 
+#### Headless Client Testing
+https://docs.travis-ci.com/user/gui-and-headless-browsers/
+
 #### Add HTML Output
