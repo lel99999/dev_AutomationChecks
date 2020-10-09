@@ -1,10 +1,11 @@
 ---
-- name: Install rpms
+- name: Install expect
   yum:
     name: "{{ item }}"
     state: present
     disable_gpg_check: yes
   with_items:
-    - "{{ expects }}"
+    - expect 
+#   - "{{ expects }}"
   tags:
     - expecttesting
