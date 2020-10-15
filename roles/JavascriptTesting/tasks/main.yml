@@ -1,0 +1,14 @@
+---
+- name: Install Node.js
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items:
+    - nodejs 
+#   - "{{ nodejs }}"
+  tags:
+    - javascripttesting
+
+- name: Install Selenium - A browser automation library
+  shell: npm install selenium-webdriver
