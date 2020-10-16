@@ -4,6 +4,8 @@ Exploratory Development with Automated System Checks and Reporting
 #### Add User Specific Checks
 - User Exists <br/>
 - User Creation <br/>
+  - in correct AD groups <br/>
+  - getfacl/setfacl has correct ACLs <br/>
 - User .bashrc and other information created/exits <br/>
   - within .bashrc STATATMP and crk variables are set <br/>
   - within .bash_profile include correct PATH additions <br/>
