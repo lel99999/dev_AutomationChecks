@@ -5,14 +5,15 @@ Exploratory Development with Automated System Checks and Reporting
 - User Exists <br/>
 - User Creation <br/>
 - User .bashrc and other information created/exits <br/>
-  - within .bashrc STATATMP and crk variables are set <br/.
+  - within .bashrc STATATMP and crk variables are set <br/>
+  - within .bash_profile include correct PATH additions <br/>
 
 Issue #142 <br/>
 - Confirm STATA serers are running<br/>
 - Confirm <org>, data,work,work2 mounts are function on _adml06<br/>
 - Check no 0kb duplicate files exists<br/>
 - Check SASStudio is funcioning correctly<br/>
-- Cehck RStudio is functioning correctly<br/>
+- Check RStudio is functioning correctly<br/>
 - Check mounts on _adml06'<br/>
 
 Issue #159 <br/>
