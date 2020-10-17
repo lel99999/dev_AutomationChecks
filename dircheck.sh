@@ -18,6 +18,18 @@ do
   fi
 done
 
+do
+  if [[ -f /home/<org>/<user>/.bash_profile
+  then
+    if [[ grep -i ".local" "$USER/.bash_profile" ]]
+    then
+      echo "bash_profile PATH correct"
+    else
+      echo "bash_profile PATH incoorrect"
+    fi
+  fi
+done
+
 # Grep for Additions in .bashrc
 for USER in /home/org/*
 do
