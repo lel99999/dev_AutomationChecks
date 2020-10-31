@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## Environment Checks
+
+## Installation Checks
+
 ## User-Specific Checks
 # id -u <name>
 if id "$1" >/dev/null 2>&1; then
