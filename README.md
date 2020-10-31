@@ -1,6 +1,12 @@
 # dev_AutomationChecks
 Exploratory Development with Automated System Checks and Reporting
 
+#### Add Environment Specific Checks
+- Check if Python Packages have been installed
+  - numpy
+  - scipy
+  - pandas
+
 #### Add User Specific Checks
 - User Exists <br/>
 - User Creation <br/>
