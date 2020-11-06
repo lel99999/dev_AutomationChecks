@@ -6,6 +6,7 @@
     disable_gpg_check: yes
   with_items:
     - expect 
+    - expect-devel 
 #   - "{{ expects }}"
   tags:
     - expecttesting

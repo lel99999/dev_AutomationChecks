@@ -10,5 +10,10 @@
   tags:
     - javascripttesting
 
+- name: View NPM Version
+  shell: npm --version
+
+# Use NVM (Node Version Manager to Install Nodejs and NPM)
+
 - name: Install Selenium - A browser automation library
   shell: npm install selenium-webdriver
