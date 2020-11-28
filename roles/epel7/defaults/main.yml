@@ -1,0 +1,4 @@
+epel_path: https://dl.fedoraproject.org/pub/epel
+epel_rpm: epel-release-latest-7.noarch.rpm
+epel_url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#command: $sudo yum install -y epel-release
