@@ -1,5 +1,9 @@
 # dev_AutomationChecks
 Exploratory Development with Automated System Checks and Reporting
+#### Frameworks to Review
+- [ ] BATS (Bash Automated Testing System) - [https://github.com/sstephenson/bats](https://github.com/sstephenson/bats) 
+- [ ] Ansible RSpec = [https://github.com/volanja/ansible_spec](https://github.com/volanja/ansible_spec)
+- [ ] Spock = [https://spockframework.org/](https://spockframework.org/)
 
 #### Add Environment Specific Checks
 - Check Python 2.x, 3.x versions
@@ -40,3 +44,5 @@ https://docs.travis-ci.com/user/gui-and-headless-browsers/
 #### Add HTML Output
 
 #### Add Selenium Testing
+  
+#### Add Infrastructure Code
