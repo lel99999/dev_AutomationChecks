@@ -2,6 +2,9 @@
 Exploratory Development with Automated System Checks and Reporting
 
 #### Add Environment Specific Checks
+- Check Python 2.x, 3.x versions
+- Check SCL Python 3.x
+- Check VirtualEnv 
 - Check if Python Packages have been installed
   - numpy
   - scipy
