@@ -81,4 +81,11 @@ for row in cursor:
 
 ```
 
-
+PostgreSQL Test:
+```
+#BASIC PostgreSQL
+conn = pyodbc.connect('DRIVER=/usr/pgsql/lib/psqlodbc.so;SERVER=<servername>;PORT=5432;DATABASE=<databasename>;UID=<uid>;PWD=<pwd>;')
+cursor = conn.cursor()
+for row in cursor.execute('select 2 * 2 as [Result];'):
+    print row.Result
+```
