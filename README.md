@@ -80,6 +80,15 @@ for row in cursor:
     print(row.user_id, row.user_name)
 
 ```
+MS SQL Server Test:
+```
+#BASIC MS SQL Server
+conn = pyodbc.connect('DRIVER=FreeTDS;SERVER=<servername>;PORT=5432;DATABASE=<databasename>;UID=<uid>;PWD=<pwd>;')
+cursor = conn.cursor()
+for row in cursor.execute('select 2 * 2 as [Result];'):
+    print row.Result
+ 
+```
 
 PostgreSQL Test:
 ```
