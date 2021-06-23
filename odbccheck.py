@@ -1,4 +1,11 @@
+import os.path
 import pyodbc
+
+# Scan .odbc.ini for Datasources
+if path.exists("~/.odbc.ini"):
+    with open("~/.odbc.ini") as f:
+        for line in f:
+            print line
 
 # BASIC SQL Server
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=me;PWD=pass')
