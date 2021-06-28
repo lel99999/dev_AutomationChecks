@@ -5,6 +5,7 @@ Exploratory Development with Automated System Checks and Reporting
 - [ ] Ansible RSpec = [https://github.com/volanja/ansible_spec](https://github.com/volanja/ansible_spec)
 - [ ] Spock = [https://spockframework.org/](https://spockframework.org/)
 - [ ] PyTest = [https://pytest.org](https://pytest.org) 
+      <li>with Selenium [https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/](https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/)</li> <br/>  
 
 #### Add Environment Specific Checks
 - Check Python 2.x, 3.x versions
