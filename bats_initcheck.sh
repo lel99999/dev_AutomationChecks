@@ -2,7 +2,7 @@
 git clone https://github.com/sstephenson/bats /usr/local/bats
 
 ## Simple test
-#!/usr/bin/env bats
+#!/usr/bin/env /usr/local/bats
 
 @test "addition using bc" {
   result="$(echo 2+2 | bc)"
