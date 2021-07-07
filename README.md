@@ -17,6 +17,9 @@ Exploratory Development with Automated System Checks and Reporting
   - scipy
   - pandas
 
+#### Visual Profiling
+- Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
+
 #### Add User Specific Checks
 - User Exists <br/>
 - User Creation <br/>
