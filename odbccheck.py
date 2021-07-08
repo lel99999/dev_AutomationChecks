@@ -1,12 +1,21 @@
 import os.path
 import pyodbc
 
-# Scan .odbc.ini for Datasources
-if path.exists("~/.odbc.ini"):
-    with open("~/.odbc.ini") as f:
-        for line in f:
-            print line
+try:
+    from configparser import ConfigParser
+except ImportError:
+    from ConfigParser import ConfigParser  # ver. < 3.0
 
+config = ConfigParser()
+
+
+# Scan .odbc.ini for Datasources
+odbcfile = "~/.odbc.ini"
+if path.exists(odbcfile):
+    config.read(odbcfile)
+    for SECTION in config.sections(): 
+        print("section: " + SECTION)
+        
 # BASIC SQL Server
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=me;PWD=pass')
 
