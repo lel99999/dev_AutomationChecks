@@ -14,7 +14,13 @@ odbcfile = "~/.odbc.ini"
 if path.exists(odbcfile):
     config.read(odbcfile)
     for SECTION in config.sections(): 
-        print("section: " + SECTION)
+    #   print("section: " + SECTION)
+        if SECTION != "ODBC Data Sources":
+            print("\n")
+            print("section: " + SECTION)
+            for key,value in config[SECTION].items():
+                print(key,value)
+
         
 # BASIC SQL Server
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=me;PWD=pass')
