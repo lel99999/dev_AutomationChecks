@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /usr/local/opt/python@3.9/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /Users/jupiterjones/vscode_pythontesting
+plugins: reporting-0.1.0
+collecting ... collected 3 items
+
+test_01.py::test_passing PASSED
+test_fail.py::test_fail FAILED
+database/test_odbc.py::test_odbc PASSED
+
+=================================== FAILURES ===================================
+__________________________________ test_fail ___________________________________
+
+    def test_fail():
+>       assert (1,2,3) == (4,5,6)
+E       assert (1, 2, 3) == (4, 5, 6)
+E         At index 0 diff: 1 != 4
+E         Full diff:
+E         - (4, 5, 6)
+E         + (1, 2, 3)
+
+test_fail.py:2: AssertionError
+=========================== short test summary info ============================
+FAILED test_fail.py::test_fail - assert (1, 2, 3) == (4, 5, 6)
+========================= 1 failed, 2 passed in 0.07s ==========================
