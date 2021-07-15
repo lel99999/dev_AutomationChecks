@@ -52,6 +52,12 @@ https://docs.travis-ci.com/user/gui-and-headless-browsers/
 #### Add Selenium Testing
   
 #### Add Infrastructure Code
+- TestSuite to possibly include:
+      - Networking
+      - Storage
+      - Databases
+      - System
+      - User/IAM
 
 #### BDD Frameworks in Python
 Behave - [http://pythonhosted.org/behave](http://pythonhosted.org/behave) <br/>
