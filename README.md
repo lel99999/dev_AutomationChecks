@@ -20,29 +20,35 @@ Exploratory Development with Automated System Checks and Reporting
 #### Visual Profiling
 - Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
 
+#### Python Based Agents and Agent Library/Frameworks/Projects
+- [https://pypi.org/project/agent/](https://pypi.org/project/agent/)
+- [https://pypi.org/project/spade/](https://pypi.org/project/spade/)
+- [https://pade.readthedocs.io/en/latest/](https://pade.readthedocs.io/en/latest/)
+- [https://mesa.readthedocs.io/en/stable/](https://mesa.readthedocs.io/en/stable/)
+
 #### Add User Specific Checks
-- User Exists <br/>
-- User Creation <br/>
-  - in correct AD groups <br/>
-  - getfacl/setfacl has correct ACLs <br/>
-- User .bashrc and other information created/exits <br/>
-  - within .bashrc STATATMP and crk variables are set <br/>
-  - within .bash_profile include correct PATH additions <br/>
+- User Exists
+- User Creation
+  - in correct AD groups
+  - getfacl/setfacl has correct ACLs
+- User .bashrc and other information created/exits 
+  - within .bashrc STATATMP and crk variables are set
+  - within .bash_profile include correct PATH additions
 
 Issue #142 <br/>
-- Confirm STATA serers are running<br/>
-- Confirm <org>, data,work,work2 mounts are function on _adml06<br/>
-- Check no 0kb duplicate files exists<br/>
-- Check SASStudio is funcioning correctly<br/>
-- Check RStudio is functioning correctly<br/>
-- Check mounts on _adml06'<br/>
+- Confirm STATA serers are running
+- Confirm <org>, data,work,work2 mounts are function on _adml06
+- Check no 0kb duplicate files exists
+- Check SASStudio is funcioning correctly
+- Check RStudio is functioning correctly
+- Check mounts on _adml06'
 
 Issue #159 <br/>
-- Check .bashrc for existence/defined crk and STATATMP <br/>
+- Check .bashrc for existence/defined crk and STATATMP
 
 
 #### Add Directory Checks
-- Check mounts from /etc/fstab <br/>
+- Check mounts from /etc/fstab
 
 #### Headless Client Testing
 https://docs.travis-ci.com/user/gui-and-headless-browsers/
