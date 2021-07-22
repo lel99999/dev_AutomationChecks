@@ -26,6 +26,9 @@ Exploratory Development with Automated System Checks and Reporting
 - [https://pade.readthedocs.io/en/latest/](https://pade.readthedocs.io/en/latest/)
 - [https://mesa.readthedocs.io/en/stable/](https://mesa.readthedocs.io/en/stable/)
 
+#### Add tox for Python vitualenv and pytest mgmt
+- [https://tox.readthedocs.io/en/latest/index.html](https://tox.readthedocs.io/en/latest/index.html)
+
 #### Add User Specific Checks
 - User Exists
 - User Creation
