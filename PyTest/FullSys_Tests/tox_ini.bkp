@@ -1,0 +1,18 @@
+[tox]
+#envlist = py35,py36,py37,py38
+envlist = local_env
+# Need to set skipsdist as not testing a Python package - if no setup.py is found
+skipsdist = true
+
+[testenv]
+allowlist_externals = make
+                      /bin/bash
+changedir = tests
+deps = pytest
+# change pytest tempdir and add posargs from command line
+# commands = pytest --basetemp="{envtmpdir}" {posargs}
+# use three sub processes
+commands = pytest --basetemp="{envtmpdir}"  \
+                  --confcutdir=..         \
+                  -n 3                    \
+                  {posargs}

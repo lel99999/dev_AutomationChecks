@@ -1,3 +1,4 @@
 tox==3.21.2
 pytest==6.2.4
+pytest-html
 docker-compose==1.28.0
