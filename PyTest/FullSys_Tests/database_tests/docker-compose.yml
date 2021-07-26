@@ -1,11 +1,33 @@
 # docker-compose.yml
 version: '3'
 services:
-  database:
+  postgresql13:
     image: "postgres" # use latest official postgres version
     env_file:
-      - database.env # configure postgres
+      - postgresql.env # configure postgres
     volumes:
-      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+      - db-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    ports:
+      - 5432:5432
+
+  sqlserver-db:
+    container_name: sqlserver-db
+#   image: microsoft/mssql-server-linux:2017-latest
+    image: mcr.microsoft.com/mssql/server:2019-CU5-ubuntu-18.04
+    env_file:
+      - mssql.env
+#   environment:
+#     SA_PASSWORD: "Testing123"
+#     ACCEPT_EULA: "Y"
+#     MSSQL_BACKUP_DIR="/var/opt/sqlserver"
+#     MSSQL_DATA_DIR="/var/opt/sqlserver"
+#     MSSQL_LOG_DIR="/var/opt/sqlserver"
+    volumes:
+      - systemdbs:/var/opt/mssql
+      - userdbs:/var/opt/sqlserver
+    ports:
+      - "15789:1433"
 volumes:
-  database-data: # named volumes can be managed easier using docker-compose
+  db-data: # named volumes can be managed easier using docker-compose
+  systemdbs:
+  userdbs:
