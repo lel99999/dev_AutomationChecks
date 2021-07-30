@@ -75,7 +75,8 @@ def parseODBC():
                     print("database access: " + _database + " - Postgresql")
 
 ### CHECK SQLServer Access
-
+                if _port == "1433":
+                    print("database access: " + _database + " - MSSQLServer")
 
 
     #           print("section: " + SECTION)
