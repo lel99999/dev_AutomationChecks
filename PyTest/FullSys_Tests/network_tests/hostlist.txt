@@ -1,0 +1,5 @@
+www.google.com
+www.usatoday.com
+www.cnn.com
+www.apple.com
+www.microsoft.com
