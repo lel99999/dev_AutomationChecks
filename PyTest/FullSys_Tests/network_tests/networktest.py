@@ -12,6 +12,8 @@ def check_ping(hostname):
     return pingstatus
 
 def checkhosts(hostfile):
+    goodhosts = []
+    badhosts = []
     i=1
     try:
 #       f = open("hostlist.txt","r")
@@ -21,9 +23,20 @@ def checkhosts(hostfile):
             print(str(i) + ": " + line + "\n")
             i+=1
             print("Network Status: " + check_ping(line))
-            
+            if check_ping(line) == "Network Active":
+                goodhosts.append(line)
+            else:
+                badhosts.appen(line)
     except Exception as ex:
         print(ex)
+    print("goodhosts:")
+    print(*goodhosts)
+#   print(*goodhosts,sep="\n")
+    print("\n")
+    print("badhosts:")
+#   print(*badhosts,sep="\n")
+    print(*badhosts)
+
 
 def main():
 #   print("Network Status: " + check_ping("www.apple.com"))
