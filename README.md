@@ -113,6 +113,14 @@ Install Microsoft SQL Server ODBC Driver v17:
 `$sudo yum install https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm` <br/>
 Install msodbcsql17 rpm package: <br/>
 `$sudo yum install msodbcsql17` <br/>
+
+Add to odbc.ini:
+```
+[ODBC Driver 17 for SQL Server]
+Description=Microsoft ODBC Driver 17 for SQL Server
+Driver=$(ls /opt/microsoft/msodbcsql17/lib64/libmsodbc*)
+UsageCount=1
+```   
       
 MS SQL Server Test:
 ```
