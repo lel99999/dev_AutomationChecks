@@ -107,6 +107,13 @@ for row in cursor:
     print(row.user_id, row.user_name)
 
 ```
+Install Microsoft SQL Server ODBC Driver v17:
+
+#Install packages-microsoft-prod.rpm: <br/>
+`$sudo yum install https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm` <br/>
+Install msodbcsql17 rpm package: <br/>
+`$sudo yum install msodbcsql17` <br/>
+      
 MS SQL Server Test:
 ```
 #BASIC MS SQL Server
