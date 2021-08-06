@@ -121,6 +121,23 @@ def pg_connect(dsn,uid,host,pwd):
            _conn.close()
            print('Database connection closed.')
 
+#def mssql_connect(_server,_database,_uid,_pwd):
+def mssql_connect(_server,_database,_uid,_pwd):
+    #May need to $kinit for Kerberos principal 
+    _server = 'wdcsqlaw02'
+    _database = 'ODBCDefaultDB'
+    #_uid = '<domain>\<username>'  -  ‘CFPB\lel’
+    _uid = 'CFPB\<your uid>'
+    _pwd = '<your_password>'
+
+    cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + _server + ';DATABASE=' + _database + ';UID="' + _uid + '";PWD=' + _pwd + ';Trusted_Connection=yes;')
+    cursor = cnxn.cursor()
+
+    cursor.execute("SELECT @@version;")
+    row = cursor.fetchone()
+    while row:
+        print(row[0])
+        row = cursor.fetchone()
 
 def baseconnect():
     """ Connect to the PostgreSQL database server """
