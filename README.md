@@ -88,8 +88,8 @@ Connect to a Database:
 ```
 import pyodbc
 
-# Specifying the ODBC driver, server name, database, etc. directly
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=me;PWD=pass')
+# Specifying the ODBC driver, server name, database, etc. directly; Add Trusted_Connection=yes for AD Secured kerberized access
+cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=me;PWD=pass;Trusted_Connection=yes')
 
 # Using a DSN, but providing a password as well
 cnxn = pyodbc.connect('DSN=test;PWD=password')
