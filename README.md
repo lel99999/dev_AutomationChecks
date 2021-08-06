@@ -124,8 +124,10 @@ UsageCount=1
       
 MS SQL Server Test:
 ```
-#BASIC MS SQL Server
-conn = pyodbc.connect('DRIVER=FreeTDS;SERVER=<servername>;PORT=5432;DATABASE=<databasename>;UID=<uid>;PWD=<pwd>;')
+#BASIC MS SQL Server 
+# - Require Trusted_Connection parameter
+# - May require $kinit for Kerberos principal
+conn = pyodbc.connect('DRIVER=FreeTDS;SERVER=<servername>;PORT=5432;DATABASE=<databasename>;UID=<uid>;PWD=<pwd>;Trusted_Connection=yes;')
 cursor = conn.cursor()
 for row in cursor.execute('select 2 * 2 as [Result];'):
     print row.Result
