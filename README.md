@@ -142,3 +142,5 @@ cursor = conn.cursor()
 for row in cursor.execute('select 2 * 2 as [Result];'):
     print row.Result
 ```
+#### incorporate Fabric 
+[http://www.fabfile.org/](http://www.fabfile.org/) <br/>
