@@ -144,3 +144,13 @@ for row in cursor.execute('select 2 * 2 as [Result];'):
 ```
 #### Incorporate Fabric 
 [http://www.fabfile.org/](http://www.fabfile.org/) <br/>
+Example 1:<br/>
+
+```
+>>> from fabric import Connection
+>>> result = Connection('web1.example.com').run('uname -s', hide=True)
+>>> msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
+>>> print(msg.format(result))
+Ran 'uname -s' on web1.example.com, got stdout:
+Linux
+```
