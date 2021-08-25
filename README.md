@@ -154,3 +154,6 @@ Example 1:<br/>
 Ran 'uname -s' on web1.example.com, got stdout:
 Linux
 ```
+
+#### Incorporate Fabric Invocations (Invoke-only, locally-focused CLI tasks)
+[https://invocations.readthedocs.io/en/latest/](https://invocations.readthedocs.io/en/latest/) <br/>
