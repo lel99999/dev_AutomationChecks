@@ -52,12 +52,16 @@ Issue #159 <br/>
 
 #### Add Directory Checks
 - Check mounts from /etc/fstab
-
+```
+$sudo systemctl list-units --type mount
+```
+      
 #### Headless Client Testing
 https://docs.travis-ci.com/user/gui-and-headless-browsers/
 
 #### Add HTML Output
-
+[x] Done
+      
 #### Add Selenium Testing
   
 #### Add Infrastructure Code
