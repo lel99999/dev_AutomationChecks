@@ -63,7 +63,22 @@ https://docs.travis-ci.com/user/gui-and-headless-browsers/
 [x] Done
       
 #### Add Selenium Testing
-  
+Example 1: <br/>
+```
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+_username = "testuser1"
+_pwd = "test@bc"
+driver = webdriver.Firefox()
+driver.get("https://<some_Url_with_login")
+element = driver.find_element_by_id("email")
+element.send_keys(_username)
+element = driver.find_element_by_id("pwd")
+element.send_keys(_pwd)
+element.send_keys(Keys.RETURN)
+element.close()
+```      
+      
 #### Add Infrastructure Code
 - TestSuite to possibly include:
       - Networking
