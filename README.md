@@ -176,3 +176,34 @@ Linux
 
 #### Incorporate Fabric Invocations (Invoke-only, locally-focused CLI tasks)
 [https://invocations.readthedocs.io/en/latest/](https://invocations.readthedocs.io/en/latest/) <br/>
+      
+#### Use Python Selenium to functionally test web app
+Can use basic wget/curl ... but multiple step process, may require more sophisticated functional test for validation
+
+Example 1: <br/>
+```
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+class PythonOrgSearch(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_search_in_python_org(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        self.assertIn("Python", driver.title)
+        elem = driver.find_element_by_name("q")
+        elem.send_keys("pycon")
+        elem.send_keys(Keys.RETURN)
+        assert "No results found." not in driver.page_source
+
+
+    def tearDown(self):
+        self.driver.close()
+
+if __name__ == "__main__":
+    unittest.main()```
+
