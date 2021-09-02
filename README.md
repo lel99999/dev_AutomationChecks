@@ -4,6 +4,7 @@ Exploratory Development with Automated System Checks and Reporting
 - [ ] BATS (Bash Automated Testing System) - [https://github.com/sstephenson/bats](https://github.com/sstephenson/bats) 
 - [ ] Ansible RSpec = [https://github.com/volanja/ansible_spec](https://github.com/volanja/ansible_spec)
 - [ ] Spock = [https://spockframework.org/](https://spockframework.org/)
+- [ ] Unnittest - [https://docs.python.org/3/library/unittest.html](https://docs.python.org/3/library/unittest.html)
 - [ ] PyTest = [https://pytest.org](https://pytest.org) 
       <li>with Selenium [https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/](https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/)</li> <br/> 
       <li> Add PyTest-html for reports [https://pytest-html.readthedocs.io/en/latest/user_guide.html](https://pytest-html.readthedocs.io/en/latest/user_guide.html) </li><br/>
