@@ -39,7 +39,7 @@ Exploratory Development with Automated System Checks and Reporting
   - within .bash_profile include correct PATH additions
 
 Issue #142 <br/>
-- Confirm STATA serers are running
+- Confirm STATA servers are running
 - Confirm <org>, data,work,work2 mounts are function on _adml06
 - Check no 0kb duplicate files exists
 - Check SASStudio is funcioning correctly
@@ -78,6 +78,11 @@ element.send_keys(_pwd)
 element.send_keys(Keys.RETURN)
 element.close()
 ```      
+##### May need to install firefox-geckodriver
+Error Messgae: WebDriverException: Message: 'geckodriver' executable needs to be in PATH. <br/>
+```
+$sudo yum install firefox-geckodriver
+```
       
 #### Add Infrastructure Code
 - TestSuite to possibly include:
