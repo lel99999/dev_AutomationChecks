@@ -9,7 +9,7 @@ Exploratory Development with Automated System Checks and Reporting
       <li>with Selenium [https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/](https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/)</li> <br/> 
       <li> Add PyTest-html for reports [https://pytest-html.readthedocs.io/en/latest/user_guide.html](https://pytest-html.readthedocs.io/en/latest/user_guide.html) </li><br/>
 
-#### Add Environment Specific Checks
+#### (1) Add Environment Specific Checks
 - Check Python 2.x, 3.x versions
 - Check SCL Python 3.x
 - Check VirtualEnv 
@@ -30,7 +30,7 @@ Exploratory Development with Automated System Checks and Reporting
 #### Add tox for Python vitualenv and pytest mgmt
 - [https://tox.readthedocs.io/en/latest/index.html](https://tox.readthedocs.io/en/latest/index.html)
 
-#### Add User Specific Checks
+#### (2) Add User Specific Checks
 - User Exists
 - User Creation
   - in correct AD groups
@@ -85,7 +85,7 @@ Error Messgae: WebDriverException: Message: 'geckodriver' executable needs to be
 $sudo yum install firefox-geckodriver
 ```
       
-#### Add Infrastructure Code
+#### (3) Add Infrastructure Code
 - TestSuite to possibly include:
       - Networking
       - Storage
@@ -99,7 +99,7 @@ Lettuce = [http://lettuce.it/intro/overview.html](http://lettuce.it/intro/overvi
 
 Largely modeled after cucumber, the BDD framework in Ruby which was the first story-based framework in RSpec <br/>
 
-#### Add ODBC Testing
+#### (4) Add ODBC Testing
 Using pyodbc: <br/>
 
 Installing pyodbc <br/>
@@ -167,7 +167,7 @@ cursor = conn.cursor()
 for row in cursor.execute('select 2 * 2 as [Result];'):
     print row.Result
 ```
-#### Incorporate Fabric 
+#### (5) Incorporate Fabric 
 [http://www.fabfile.org/](http://www.fabfile.org/) <br/>
 Example 1:<br/>
 
