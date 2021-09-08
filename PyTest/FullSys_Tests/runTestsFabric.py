@@ -1,6 +1,6 @@
 from fabric import Connection
 
-_hostname = wdcreeodl02
+_hostname = "wdcreeodl02"
 _uid = "deploy"
 _hoststring = _uid + "@" + _hostname
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git /tmp/autocheck"
