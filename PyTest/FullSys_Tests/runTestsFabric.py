@@ -27,7 +27,7 @@ def cmdRun(_cmd):
 
 cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
-cmdPyVenv = "python3 -m /tmp/venv3"
+cmdPyVenv = "python3 -m venv /tmp/venv3"
 cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
 cmdPipReq = "pip install -r " + _tmpPath + "/requirements.txt"
 cmdPyTest = "pytest"
