@@ -10,10 +10,11 @@ _tmpPath = "/tmp/autocheck"
 def cmdRun(_cmd):
   _tmpResult = Connection(_hoststring).run(_cmd,hide=True)
   msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-  #outfile = open("/tmp/testRun.txt","w")
-  outfile = open("/tmp/testRun.txt","a")
-  outfile.write(msg)
-  outfile.close()
+  print("--- " + msg)
+  # outfile = open("/tmp/testRun.txt","w")
+# outfile = open("/tmp/testRun.txt","a")
+# outfile.write(msg)
+# outfile.close()
 
 # check if /tmp/autocheck exists, then remove
 #if os.path.exists(_tmpPath):
