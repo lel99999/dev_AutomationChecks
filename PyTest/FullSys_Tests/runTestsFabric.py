@@ -29,7 +29,7 @@ cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 cmdPyVenv = "python3 -m venv /tmp/venv3"
 cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
-cmdPipReq = "pip install -r " + _tmpPath + "/requirements.txt"
+cmdPipReq = "pip install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "pytest --html-report=/tmp/autocheck/report/testReport.html"
 
