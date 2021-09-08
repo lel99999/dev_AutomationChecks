@@ -29,6 +29,9 @@ cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 cmdPyVenv = "python3 -m venv /tmp/venv3"
 cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
+
+# Pip has error: No module named 'setuptools_rust'
+cmdPipRustFix = "pip install setuptools-rust"
 cmdPipReq = "pip install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "pytest --html-report=/tmp/autocheck/report/testReport.html"
@@ -37,6 +40,7 @@ cmdRun(cmdCleanDir)
 cmdRun(cmdClone)
 cmdRun(cmdPyVenv)
 cmdRun(cmdPyVenv_Activate)
+cmdRun(cmdPipRustFix)
 cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
 
