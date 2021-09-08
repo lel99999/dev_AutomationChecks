@@ -5,7 +5,7 @@ from fabric import Connection
 _hostname = "wdcdadml09"
 _uid = "deploy"
 _hoststring = _uid + "@" + _hostname
-_tmpPath = "/tmp/autocheck"
+_tmpPath = "~/tmp/autocheck"
 
 def cmdRun(_cmd):
   _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
