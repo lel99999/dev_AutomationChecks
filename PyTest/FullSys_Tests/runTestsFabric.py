@@ -1,5 +1,5 @@
 import os
-import shutil
+#import shutil
 from fabric import Connection
 
 _hostname = "wdcreeodl02"
@@ -8,14 +8,16 @@ _hoststring = _uid + "@" + _hostname
 _tmpPath = "/tmp/autocheck"
 
 # check if /tmp/autocheck exists, then remove
-if os.path.exists(_tmpPath):
-  os.system("sudo rm -rf " + _tmpPath)
+#if os.path.exists(_tmpPath):
+#  os.system("sudo rm -rf " + _tmpPath)
 # try:
 #   shutil.rmtree(_tmpPath)
 # except OSError as e:
 #   print("Error: %s : %s" % (_tmpPath, e.strerror))
 
+cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
+testClenDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
 testresult = Connection(_hoststring).run(cmdClone,hide=True)
 msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
 outfile = open("/tmp/testRun.txt","w")
