@@ -9,10 +9,11 @@ _tmpPath = "/tmp/autocheck"
 
 # check if /tmp/autocheck exists, then remove
 if os.path.exists(_tmpPath):
-  try:
-    shutil.rmtree(_tmpPath)
-  except OSError as e:
-    print("Error: %s : %s" % (_tmpPath, e.strerror))
+  os.system("rm -rf " + _tmpPath)
+# try:
+#   shutil.rmtree(_tmpPath)
+# except OSError as e:
+#   print("Error: %s : %s" % (_tmpPath, e.strerror))
 
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 testresult = Connection(_hoststring).run(cmdClone,hide=True)
