@@ -8,9 +8,10 @@ _hoststring = _uid + "@" + _hostname
 _tmpPath = "/tmp/autocheck"
 
 def cmdRun(_cmd):
-  _tmpResult = Connection(_hoststring).run(_cmd,hide=True)
+  _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
   msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-  print("--- " + msg)
+  print("--- " + _tmpStdOut)
+
   # outfile = open("/tmp/testRun.txt","w")
 # outfile = open("/tmp/testRun.txt","a")
 # outfile.write(msg)
