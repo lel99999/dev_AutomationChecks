@@ -9,7 +9,7 @@ _tmpPath = "/tmp/autocheck"
 
 # check if /tmp/autocheck exists, then remove
 if os.path.exists(_tmpPath):
-  os.system("rm -rf " + _tmpPath)
+  os.system("sudo rm -rf " + _tmpPath)
 # try:
 #   shutil.rmtree(_tmpPath)
 # except OSError as e:
