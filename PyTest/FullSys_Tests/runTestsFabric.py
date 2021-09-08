@@ -2,7 +2,7 @@ import os
 #import shutil
 from fabric import Connection
 
-_hostname = "wdcreeodl02"
+_hostname = "wdcdadml09"
 _uid = "deploy"
 _hoststring = _uid + "@" + _hostname
 _tmpPath = "/tmp/autocheck"
