@@ -28,8 +28,8 @@ def cmdRun(_cmd):
 
 cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
-cmdPyVenv = "python3 -m venv /tmp/venv3"
-cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
+cmdPyVenv = "python3 -m venv ~/tmp/venv3"
+cmdPyVenv_Activate = "source ~/tmp/venv3/bin/activate"
 
 # Pip has error: No module named 'setuptools_rust'
 cmdPipRustFix = "pip install setuptools-rust"
