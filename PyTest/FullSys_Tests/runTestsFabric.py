@@ -35,6 +35,10 @@ cmdPyTest_wReport = "pytest --html-report=/tmp/autocheck/report/testReport.html"
 
 cmdRun(cmdCleanDir)
 cmdRun(cmdClone)
+cmdRun(cmdPyVenv)
+cmdRun(cmdPyVenv_Activate)
+cmdRun(cmdPipReq)
+cmdRun(cmdPyTest_wReport)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
 #testresult = Connection(_hoststring).run(cmdClone,hide=True)
