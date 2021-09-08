@@ -12,7 +12,7 @@ if os.path.exists(_tmpPath):
   try:
     shutil.rmtree(_tmpPath)
   except OSError as e:
-    print("Error: %s : %s" % (_tmpPath), e.strerror))
+    print("Error: %s : %s" % (_tmpPath, e.strerror))
 
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 testresult = Connection(_hoststring).run(cmdClone,hide=True)
