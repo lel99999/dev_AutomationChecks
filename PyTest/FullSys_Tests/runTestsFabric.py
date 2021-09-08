@@ -1,9 +1,16 @@
+import os
 from fabric import Connection
 
 _hostname = "wdcreeodl02"
 _uid = "deploy"
 _hoststring = _uid + "@" + _hostname
-cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git /tmp/autocheck"
+_tmpPath = "/tmp/autocheck"
+
+# check if /tmp/autocheck exists, then remove
+if os.path.exists(_tmpPath):
+  os.remove(_tmpPath)
+
+cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 testresult = Connection(_hoststring).run(cmdClone,hide=True)
 msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
 outfile = open("/tmp/testRun.txt","w")
