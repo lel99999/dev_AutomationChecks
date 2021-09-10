@@ -43,7 +43,7 @@ cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 
 cmdPipReq = "pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
-cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt" + " --html-report=/tmp/autocheck/report/testReport.html"
+cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/" + " --html-report=/tmp/autocheck/report/testReport.html"
 
 cmdRun(cmdCleanDir)
 cmdRun(cmdClone)
