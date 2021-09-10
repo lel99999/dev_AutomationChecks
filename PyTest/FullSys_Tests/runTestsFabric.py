@@ -34,13 +34,13 @@ cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
 # Pip has error: No module named 'setuptools_rust'
 cmdPipRustFix = "pip install setuptools-rust"
 
-cmdPipUpgrade = "pip install -U pip setuptools"
+cmdPipUpgrade = "pip3 install -U pip setuptools"
 
 cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
 cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
 cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 
-cmdPipReq = "pip install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
+cmdPipReq = "pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "pytest --html-report=/tmp/autocheck/report/testReport.html"
 
