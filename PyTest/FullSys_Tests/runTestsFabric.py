@@ -34,6 +34,8 @@ cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
 
 # Pip has error: No module named 'setuptools_rust'
 cmdPipRustFix = "pip install setuptools-rust"
+# Pip has error: Install psycopg2-binary instead
+cmdPipPsycopg2Fix = "pip install psycopg2-binary"
 
 cmdPipUpgrade = "pip3 install -U pip setuptools"
 
@@ -50,6 +52,7 @@ cmdRun(cmdClone)
 cmdRun(cmdPyVenv)
 cmdRun(cmdPyVenv_Activate)
 cmdRun(cmdPipRustFix)
+cmdRun(cmdPipPsycopg2Fix)
 cmdRun(cmdPipUpgrade)
 cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
