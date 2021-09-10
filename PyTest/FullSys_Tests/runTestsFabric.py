@@ -2,10 +2,11 @@ import os
 #import shutil
 from fabric import Connection
 
-_hostname = "wdcdadml09"
+_hostname = "wdcreeodl02"
+#_hostname = "wdcdadml09"
 _uid = "deploy"
 _hoststring = _uid + "@" + _hostname
-_tmpPath = "~/tmp/autocheck"
+_tmpPath = "/tmp/autocheck"
 
 def cmdRun(_cmd):
   _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
@@ -28,8 +29,8 @@ def cmdRun(_cmd):
 
 cmdCleanDir = "rm -rf " + _tmpPath
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
-cmdPyVenv = "python3 -m venv ~/tmp/venv3"
-cmdPyVenv_Activate = "source ~/tmp/venv3/bin/activate"
+cmdPyVenv = "python3 -m venv /tmp/venv3"
+cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
 
 # Pip has error: No module named 'setuptools_rust'
 cmdPipRustFix = "pip install setuptools-rust"
