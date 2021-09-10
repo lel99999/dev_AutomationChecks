@@ -126,7 +126,7 @@ def mssql_connect(_server,_database,_uid,_pwd):
     #May need to $kinit for Kerberos principal 
     _server = 'wdcsqlaw02'
     _database = 'ODBCDefaultDB'
-    #_uid = '<domain>\<username>'  -  ‘CFPB\lel’
+    #_uid = '<domain>\\<username>'  -  ‘CFPB\\lel’
     _uid = 'CFPB\<your uid>'
     _pwd = '<your_password>'
 
