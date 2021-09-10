@@ -38,6 +38,7 @@ cmdPipUpgrade = "pip install -U pip setuptools"
 
 cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
 cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
+cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 
 cmdPipReq = "pip install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
@@ -51,6 +52,7 @@ cmdRun(cmdPipRustFix)
 cmdRun(cmdPipUpgrade)
 cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
+cmdRun(cmdModCacheDirPerm)
 cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
 
