@@ -36,6 +36,9 @@ cmdPipRustFix = "pip install setuptools-rust"
 
 cmdPipUpgrade = "pip install -U pip setuptools"
 
+cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
+cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
+
 cmdPipReq = "pip install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "pytest --html-report=/tmp/autocheck/report/testReport.html"
@@ -46,6 +49,8 @@ cmdRun(cmdPyVenv)
 cmdRun(cmdPyVenv_Activate)
 cmdRun(cmdPipRustFix)
 cmdRun(cmdPipUpgrade)
+cmdRun(cmdMkReportDir)
+cmdRun(cmdModReportDirPerm)
 cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
 
