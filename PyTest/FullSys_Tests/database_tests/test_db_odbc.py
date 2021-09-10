@@ -127,7 +127,7 @@ def mssql_connect(_server,_database,_uid,_pwd):
     _server = 'wdcsqlaw02'
     _database = 'ODBCDefaultDB'
     #_uid = '<domain>\\<username>'  -  ‘CFPB\\lel’
-    _uid = 'CFPB\<your uid>'
+#   _uid = 'CFPB\<your uid>'
     _pwd = '<your_password>'
 
     cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + _server + ';DATABASE=' + _database + ';UID="' + _uid + '";PWD=' + _pwd + ';Trusted_Connection=yes;')
