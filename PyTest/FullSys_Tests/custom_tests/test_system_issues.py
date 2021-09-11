@@ -12,4 +12,4 @@ def test_installed_pydatasci():
     # check for any of the matches
 #   assert any(x in msg for x in pkgmatch)
     # check for all matches
-    assert any(x in msg for x in pkgmatch)
+    assert all(x in msg for x in pkgmatch)
