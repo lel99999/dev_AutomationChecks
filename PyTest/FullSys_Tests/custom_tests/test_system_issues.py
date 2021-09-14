@@ -1,4 +1,4 @@
-
+import os
 
 def test_issue_146():
     """  Check Python3 Versions """
@@ -13,3 +13,8 @@ def test_installed_pydatasci():
 #   assert any(x in msg for x in pkgmatch)
     # check for all matches
     assert all(x in msg for x in pkgmatch)
+
+def test_service_status(svc):
+    _status = os.system("systemctl is-active --quiet " + svc)
+    print(_status) # return 0 for active else inactive
+    assert _status == 0
