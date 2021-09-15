@@ -1,0 +1,7 @@
+tox==3.21.2
+pytest==6.2.4
+pytest-html
+pytest-html-reporter
+fabric
+psycopg2
+docker-compose==1.28.0
