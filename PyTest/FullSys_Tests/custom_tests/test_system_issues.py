@@ -1,4 +1,4 @@
-
+import pytest
 
 def test_issue_146():
     """  Check Python3 Versions """
@@ -13,3 +13,8 @@ def test_installed_pydatasci():
 #   assert any(x in msg for x in pkgmatch)
     # check for all matches
     assert all(x in msg for x in pkgmatch)
+
+# include parametrizing tests
+@pytest.mark.parametrize("svc,expected_svc_status",[("cron","enabled"),("atd","disabled")])
+def test_service_enabled(svc,expected_svc_status):
+    assert eval(svc) == expected
