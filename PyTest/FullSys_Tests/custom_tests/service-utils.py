@@ -1,40 +1,6 @@
-import pytest
 import os
 
-def test_issue_146():
-    """  Check Python3 Versions """
-    assert 1 == 1
-
-def test_installed_pydatasci():
-    """" Check Python data science packages: numpy, scipy, pandas installed """
-    msg = "numpy scipy pandas four score and seven years ago"
-    pkgmatch = ["numpy","scipy","pandas"]
-
-    # check for any of the matches
-#   assert any(x in msg for x in pkgmatch)
-    # check for all matches
-    assert all(x in msg for x in pkgmatch)
-
-# include parametrizing tests
-@pytest.mark.parametrize("svc,expected_svc_status",[("cron","enabled"),("atd","disabled")])
-def test_service_enabled(svc,expected_svc_status):
-    assert eval(svc) == expected
-
-def test_service_status(svc):
-    _status = os.system("systemctl is-active --quiet " + svc)
-    print(_status) # return 0 for active else inactive
-    assert _status == 0
-
-def test_system_services():
-    _svcmatch = ["crond","atd"]
-    _sys-svcs = os.system("systemctl list-unit-files")
-    # any matches
-    assert any(x in _sys-svc for y in svcmatch)
-    # all matches
-    assert any(x in _sys-svc for y in svcmatch)
-
-#systemctl list0unit-files
-_test-svcs = """
+testservices = """
 proc-sys-fs-binfmt_misc.automount             static
 dev-hugepages.mount                           static
 dev-mqueue.mount                              static
@@ -101,3 +67,16 @@ dbus-org.bluez.service                        enabled
 dbus-org.fedoraproject.FirewallD1.service     masked
 dbus-org.freedesktop.Avahi.service            enabled
 """
+
+def get_TestServices():
+    return testservices
+
+def get_KV_TestServices():
+    _kv = {}
+    for l in testservices.splitlines():
+        print("line: " + l)
+        k,v = l.split("  ",2)
+        _kv.setdefault(k.strip(),v.strip())
+        return _kv
+
+print(get_KV_TestServices())
