@@ -3,6 +3,8 @@ import os
 
 def test_issue_146():
     """  Check Python3 Versions """
+    _Py3Version = os.system("python3 -V")
+    print(_Py3Version)
     assert 1 == 1
 
 def test_installed_pydatasci():
@@ -16,22 +18,25 @@ def test_installed_pydatasci():
     assert all(x in msg for x in pkgmatch)
 
 # include parametrizing tests
-@pytest.mark.parametrize("svc,expected_svc_status",[("cron","enabled"),("atd","disabled")])
+@pytest.mark.parametrize("svc,expected_svc_status",[("cups","enabled"),("debug-shell","disabled")])
 def test_service_enabled(svc,expected_svc_status):
-    assert eval(svc) == expected
+    assert eval(svc) == expected_svc_status
 
-def test_service_status(svc):
-    _status = os.system("systemctl is-active --quiet " + svc)
-    print(_status) # return 0 for active else inactive
+def test_service_status(svc2chk):
+    _status = os.system("systemctl is-active --quiet " + svc2chk)
+    #print(_status) # return 0 for active else inactive
     assert _status == 0
 
+
+"""
 def test_system_services():
     _svcmatch = ["snapd","single"]
     _sys_svcs = os.system("systemctl list-unit-files")
     # any matches
-    assert any(x in _sys_svc for y in svcmatch)
+    #assert any(y in _sys_svc for y in _svcmatch)
     # all matches
-    assert any(x in _sys_svc for y in svcmatch)
+#   assert any(y in _sys_svc for y in svcmatch)
+"""
 
 #systemctl list0unit-files
 _testsvc = """ proc-sys-fs-binfmt_misc.automount             static
