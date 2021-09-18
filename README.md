@@ -20,6 +20,9 @@ Exploratory Development with Automated System Checks and Reporting
 
 #### Visual Profiling
 - Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
+- 
+#### Cookiecutter Templates for PyTest
+- [https://github.com/pytest-dev/cookiecutter-pytest-plugin](https://github.com/pytest-dev/cookiecutter-pytest-plugin) <br/>
 
 #### Python Based Agents and Agent Library/Frameworks/Projects
 - [https://pypi.org/project/agent/](https://pypi.org/project/agent/)
