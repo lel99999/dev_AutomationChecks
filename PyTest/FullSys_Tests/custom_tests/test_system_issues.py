@@ -1,5 +1,6 @@
 import pytest
 import os
+import psutil
 
 def test_issue_146():
     """  Check Python3 Versions """
@@ -18,7 +19,7 @@ def test_installed_pydatasci():
     assert all(x in msg for x in pkgmatch)
 
 # include parametrizing tests
-@pytest.mark.parametrize("svc,expected_svc_status",[("cups","enabled"),("debug-shell","disabled")])
+@pytest.mark.parametrize("svc,expected_svc_status",[("cron","sleeping"),("msedge","disabled"),("cron","running")])
 def test_service_enabled(svc,expected_svc_status):
     assert eval(svc) == expected_svc_status
 
@@ -27,6 +28,59 @@ def test_service_status(svc2chk):
     #print(_status) # return 0 for active else inactive
     assert _status == 0
 
+def show_all_svcs():
+    # return list
+    return [(
+        psutil.Process(p).name(),
+        psutil.Process(p).status(),
+        ) for p in psutil.pids()]
+
+
+#print(show_all_svcs())
+
+def show_all_kv_svcs():
+    _kv_svcs = {}
+    # return dict of key,value
+
+    for p in psutil.pids():
+        _tmpD = {psutil.Process(p).name():psutil.Process(p).status()}
+        _kv_svcs.update(_tmpD)
+    return _kv_svcs
+#   return [{
+#       psutil.Process(p).name():
+#       psutil.Process(p).status()
+#       } for p in psutil.pids()]
+
+
+#print(show_all_svcs())
+
+
+def show_running_svcs():
+    _runsvcs = {}
+    for svc in show_all_svcs():
+        if svc[1] == 'running':
+            _tmpDic = {svc[0]:svc[1]}
+            print(_tmpDic)
+            _runsvcs.update(_tmpDic)
+    return _runsvcs
+
+
+#print(show_running_svcs())
+
+def show_running_svcs_DictComp():
+    _dictTest = {'cron':'na','cups':'na'}
+    for (k,v) in show_all_kv_svcs().items():
+        if k in _dictTest.keys():
+            print("key found")
+
+show_running_svcs_DictComp()
+
+def test_check_svc_status():
+    _svcmatch = ["msedge","cron"]
+    for _svc in show_all_svcs():
+        if _svc[1] in _svcmatch:
+            print("Match found: " + _svc[1])
+#   assert any(y in _svcmatch for _svc[1] in show_all_svcs())
 
 """
 def test_system_services():
