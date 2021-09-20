@@ -20,7 +20,7 @@ Exploratory Development with Automated System Checks and Reporting
 
 #### Visual Profiling
 - Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
-- 
+
 #### Cookiecutter Templates for PyTest
 - [https://github.com/pytest-dev/cookiecutter-pytest-plugin](https://github.com/pytest-dev/cookiecutter-pytest-plugin) <br/>
 - [Common Patterns for Tests - from Scientific Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/advanced-testing.html) <br/>
