@@ -9,9 +9,9 @@ def checkpath(_path):
     Path_exists = path.isdir(_path)
     return Path_exists
 
-_mounts = ["/data","/work","/work2"]
+_mounts = ["/home/data","/home/work","/home/work2"]
 def test_storage_mounts():
-    """ Check mounts /data, /work, /work2 """
+    """ Check mounts /home/data, /home/work, /home/work2 """
 #   assert 1 == 1 
     for ckmount in _mounts:
 #       print(ckmount)
