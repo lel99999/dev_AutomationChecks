@@ -16,7 +16,7 @@ def test_storage_mounts():
     for ckmount in _mounts:
 #       print(ckmount)
         print(ckmount + " : " + str(checkpath(ckmount)))
-
+        assert checkpath(ckmount) == True,"Mount Error: " + ckmount + " possibly not mounted correctly"
 
 if __name__ == "__main__":
     test_storage_mounts()
