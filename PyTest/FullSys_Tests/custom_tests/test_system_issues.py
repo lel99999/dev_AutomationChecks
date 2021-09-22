@@ -23,10 +23,10 @@ def test_installed_pydatasci():
 def test_service_enabled(svc,expected_svc_status):
     assert eval(svc) == expected_svc_status
 
-def test_service_status(svc2chk):
-    _status = os.system("systemctl is-active --quiet " + svc2chk)
-    #print(_status) # return 0 for active else inactive
-    assert _status == 0
+#def test_service_status(svc2chk):
+#   _status = os.system("systemctl is-active --quiet " + svc2chk)
+#   #print(_status) # return 0 for active else inactive
+#   assert _status == 0
 
 def show_all_svcs():
     # return list
