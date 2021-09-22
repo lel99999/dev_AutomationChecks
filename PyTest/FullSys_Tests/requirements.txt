@@ -29,7 +29,7 @@ packaging
 paramiko
 pathlib2
 Pillow
-pkg_resources
+pkg_resources==0.0.0
 platformdirs
 pluggy
 psutil==5.8.0
