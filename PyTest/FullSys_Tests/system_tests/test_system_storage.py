@@ -9,10 +9,13 @@ def checkpath(_path):
     Path_exists = path.isdir(_path)
     return Path_exists
 
+_mounts = ["/data","/work","/work2"]
 def test_storage_mounts():
+    """ Check mounts /data, /work, /work2 """
 #   assert 1 == 1 
-    for ckpath in testpaths:
-        print(ckpath + " : " + str(checkpath(ckpath)))
+    for ckmount in _mounts:
+#       print(ckmount)
+        print(ckmount + " : " + str(checkpath(ckmount)))
 
 
 if __name__ == "__main__":
