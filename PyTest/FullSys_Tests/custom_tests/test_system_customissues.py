@@ -1,12 +1,15 @@
 import pytest
 import os
 import psutil
+import sys
+#from platform import python_version
 
 def test_issue_146():
     """  Check Python3 Versions """
-    _Py3Version = os.system("python3 -V")
+#   _Py3Version = os.system("python3 -V")
+    _Py3Version = sys.version_info
     print(_Py3Version)
-    assert 1 == 1
+    assert _Py3Version >= (3,)
 
 def test_installed_pydatasci():
     """" Check Python data science packages: numpy, scipy, pandas installed """
@@ -19,14 +22,14 @@ def test_installed_pydatasci():
     assert all(x in msg for x in pkgmatch)
 
 # include parametrizing tests
-@pytest.mark.parametrize("svc,expected_svc_status",[("cron","sleeping"),("msedge","disabled"),("cron","running")])
-def test_service_enabled(svc,expected_svc_status):
-    assert eval(svc) == expected_svc_status
+#@pytest.mark.parametrize("svc,expected_svc_status",[("cron","sleeping"),("msedge","disabled"),("cron","running")])
+#def test_service_enabled(svc,expected_svc_status):
+#    assert eval(svc) == expected_svc_status
 
-def test_service_status(svc2chk):
-    _status = os.system("systemctl is-active --quiet " + svc2chk)
-    #print(_status) # return 0 for active else inactive
-    assert _status == 0
+#def test_service_status(svc2chk):
+#    _status = os.system("systemctl is-active --quiet " + svc2chk)
+#    #print(_status) # return 0 for active else inactive
+#    assert _status == 0
 
 def show_all_svcs():
     # return list
