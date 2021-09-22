@@ -1,7 +1,7 @@
 import pytest
 import os
 import psutil
-import sys
+import sys,subprocess
 #from platform import python_version
 
 def test_issue_146():
@@ -10,6 +10,22 @@ def test_issue_146():
     _Py3Version = sys.version_info
     print(_Py3Version)
     assert _Py3Version >= (3,)
+
+def test_diskmounts():
+    """  Check disk mounts: data, work, work2 """
+    _chkmounts = ["msedge","cron"]
+    _tmpProc = subprocess.Popen(['df', '-h'], stdout=subprocess.PIPE)
+    _output = _tmpProc.communicate()[0]
+    _output1 = _tmpProc.communicate()[0].strip().split("\n")
+    print("---------------------")
+    print(_output1)
+    print("---------------------")
+    for line in _output.strip().split("\n")[1:]:
+        _fields = line.split()
+        print(_fields[5],fields[4])
+#   assert any(y in _svcmatch for _svc[1] in show_all_svcs())
+
+
 
 def test_installed_pydatasci():
     """" Check Python data science packages: numpy, scipy, pandas installed """
