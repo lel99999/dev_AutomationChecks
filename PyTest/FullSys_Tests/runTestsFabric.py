@@ -28,6 +28,7 @@ def cmdRun(_cmd):
 #   print("Error: %s : %s" % (_tmpPath, e.strerror))
 
 cmdCleanDir = "rm -rf " + _tmpPath
+cmdCleanVenv = "rm -rf /tmp/venv3"
 cmdClone = "git clone https://github.com/lel99999/dev_AutomationChecks.git " + _tmpPath
 cmdPyVenv = "/bin/python3 -m venv /tmp/venv3"
 #cmdVenv3Fix = "chmod -R 777 /tmp/venv3"
@@ -59,6 +60,7 @@ _datetime = now.strftime("%m-%d-%Y--%H:%M:%S")
 cmdReportStage = "cp /tmp/autocheck/report/testReport.html " + "/opt/pytest_stage/pytestReport_" + _datetime + ".html" 
 
 cmdRun(cmdCleanDir)
+cmdRun(cmdCleanVenv)
 cmdRun(cmdClone)
 cmdRun(cmdPyVenv)
 #cmdRun(cmdVenv3Fix)
