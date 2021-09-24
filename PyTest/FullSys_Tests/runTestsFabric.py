@@ -44,6 +44,7 @@ cmdPipPsycopg2Fix = "/tmp/venv3/bin/pip3 install psycopg2-binary"
 # Explicit install of pytest via pip
 cmdPipPytest = "/tmp/venv3/bin/pip3 install pytest pytest-html-reporter"
 
+# Report Tmp Staging Location
 cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
 cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
 cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
@@ -51,6 +52,11 @@ cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 cmdPipReq = "/tmp/venv3/bin/pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/testReport.html" + " -rs"
+
+from datetime import datetime
+now = datetime.now()
+_datetime = now.strftime("%m-%d-%Y--%H:%M%S")
+cmdReportStage = "cp /tmp/autocheck/report/testReport.html " + "/opt/pytest_stage/pytestReport_" + _datetime + ".html" 
 
 cmdRun(cmdCleanDir)
 cmdRun(cmdClone)
@@ -66,6 +72,7 @@ cmdRun(cmdModReportDirPerm)
 cmdRun(cmdModCacheDirPerm)
 cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
+cmdRun(cmdReportStage)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
 #testresult = Connection(_hoststring).run(cmdClone,hide=True)
