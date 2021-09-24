@@ -34,17 +34,17 @@ cmdPyVenv = "/bin/python3 -m venv /tmp/venv3"
 cmdPyVenv_Activate = "source /tmp/venv3/bin/activate"
 
 # Pip has error: No module named 'setuptools_rust'
-cmdPipRustFix = "pip3 install setuptools-rust"
+cmdPipRustFix = "/tmp/venv3/bin/pip3 install setuptools-rust"
 # Pip has error: Install psycopg2-binary instead
-cmdPipPsycopg2Fix = "pip3 install psycopg2-binary"
+cmdPipPsycopg2Fix = "/tmp/venv3/bin/pip3 install psycopg2-binary"
 
-cmdPipUpgrade = "pip3 install -U pip setuptools"
+cmdPipUpgrade = "/tmp/venv3/bin/pip3 install -U pip setuptools"
 
 cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
 cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
 cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 
-cmdPipReq = "pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
+cmdPipReq = "/tmp/venv3/bin/pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
 cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/testReport.html" + " -rs"
 
@@ -53,13 +53,14 @@ cmdRun(cmdClone)
 cmdRun(cmdPyVenv)
 #cmdRun(cmdVenv3Fix)
 cmdRun(cmdPyVenv_Activate)
+cmdRun(cmdPipReq)
 cmdRun(cmdPipRustFix)
 cmdRun(cmdPipPsycopg2Fix)
 cmdRun(cmdPipUpgrade)
 cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
 cmdRun(cmdModCacheDirPerm)
-cmdRun(cmdPipReq)
+#cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
