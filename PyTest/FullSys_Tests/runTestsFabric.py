@@ -41,6 +41,8 @@ cmdPipUpgrade = "/tmp/venv3/bin/pip3 install -U pip setuptools"
 # Pip has error: Install psycopg2-binary instead
 cmdPipPsycopg2Fix = "/tmp/venv3/bin/pip3 install psycopg2-binary"
 
+# Explicit install of pytest via pip
+cmdPipPytest = "/tmp/venv3/bin/pip3 install pytest pytest-html-reporter"
 
 cmdMkReportDir = "mkdir -p " + _tmpPath + "/report"
 cmdModReportDirPerm = "chmod -R 777 " + _tmpPath + "/report"
@@ -58,6 +60,7 @@ cmdRun(cmdPyVenv_Activate)
 cmdRun(cmdPipRustFix)
 cmdRun(cmdPipUpgrade)
 cmdRun(cmdPipPsycopg2Fix)
+cmdRun(cmdPipPytest)
 cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
 cmdRun(cmdModCacheDirPerm)
