@@ -64,7 +64,7 @@ cmdRun(cmdPipPytest)
 cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
 cmdRun(cmdModCacheDirPerm)
-#cmdRun(cmdPipReq)
+cmdRun(cmdPipReq)
 cmdRun(cmdPyTest_wReport)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
