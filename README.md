@@ -8,6 +8,7 @@ Exploratory Development with Automated System Checks and Reporting
 - [ ] PyTest = [https://pytest.org](https://pytest.org) 
       <li>with Selenium [https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/](https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/)</li> <br/> 
       <li> Add PyTest-html for reports [https://pytest-html.readthedocs.io/en/latest/user_guide.html](https://pytest-html.readthedocs.io/en/latest/user_guide.html) </li><br/>
+      <li> Docker Test Fixture [https://testinfra.readthedocs.io/en/latest/examples.html](https://testinfra.readthedocs.io/en/latest/examples.html) </li><br/>
 
 #### (1) Add Environment Specific Checks
 - Check Python 2.x, 3.x versions
