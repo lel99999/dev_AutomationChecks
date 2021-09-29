@@ -11,7 +11,7 @@ def checkpath(_path):
     Path_exists = path.isdir(_path)
     return Path_exists
 
-@pytest.mark.parametrize('_diskmount,_expected',[('/home/data',True),('/home/work',True),('/home/work2',True)])
+@pytest.mark.parametrize('_diskmount,_expected',[('/home/data',True),('/home/work',True),('/home/work2',True),('/home/blahblah',True)])
 #@pytest.mark.parametrize('_diskmount,_expected',[('/Applications',True),('/System',True),('/Users',True),('/Users1',True)])
 def test_shared_mounts(_diskmount,_expected):
     assert checkpath(_diskmount) == _expected
@@ -19,7 +19,7 @@ def test_shared_mounts(_diskmount,_expected):
 #@pytest.mark.parametrize('_diskmount,_expected',[('/home/data',True),('/home/work',True),('/home/work2',True)])
 def test_storage_mounts():
     """ Check mounts /home/data, /home/work, /home/work2 """
-    _mounts = ["/home/data","/home/work","/home/work2"]
+    _mounts = ["/home/data","/home/work","/home/work2","/home/blahblah"]
 #   _mounts = ["/Applications","/System","/Users"]
 #   assert 1 == 1 
     for ckmount in _mounts:
