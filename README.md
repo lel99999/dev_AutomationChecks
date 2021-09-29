@@ -206,7 +206,8 @@ Linux
 ```
 
 #### Incorporate Fabric Invocations (Invoke-only, locally-focused CLI tasks)
-[https://invocations.readthedocs.io/en/latest/](https://invocations.readthedocs.io/en/latest/) <br/>
+- [https://invocations.readthedocs.io/en/latest/](https://invocations.readthedocs.io/en/latest/) <br/>
+- [Invocation Error/Error Handling](https://github.com/fabric/fabric/issues/1659) <br/>      
       
 #### Use Python Selenium to functionally test web app
 Can use basic wget/curl ... but multiple step process, may require more sophisticated functional test for validation
