@@ -13,6 +13,8 @@ def cmdRun(runcmd):
     try:
         _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
         msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
+    except UnexpectedExit as e:
+        print("Error: " + str(e.result))
     except:
         print("Error: ", sys.exc_info()[0], "occurred.")
     print("--- " + _cmd)
