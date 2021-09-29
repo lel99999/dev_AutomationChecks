@@ -1,6 +1,7 @@
 import os,sys
 #import shutil
 from fabric import Connection
+from invoke import UnexpectedExit
 
 _hostname = "wdcreancil01"
 _uid = "deploy"
