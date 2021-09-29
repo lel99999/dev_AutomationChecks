@@ -9,8 +9,28 @@ Exploratory Development with Automated System Checks and Reporting
       <li>with Selenium [https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/](https://www.lambdatest.com/blog/pytest-report-generation-for-selenium-automation-scripts/)</li> <br/> 
       <li> Add PyTest-html for reports [https://pytest-html.readthedocs.io/en/latest/user_guide.html](https://pytest-html.readthedocs.io/en/latest/user_guide.html) </li><br/>
       <li> Docker Test Fixture [https://testinfra.readthedocs.io/en/latest/examples.html](https://testinfra.readthedocs.io/en/latest/examples.html) </li><br/>
+   ___Pytest Exit Codes___ <br/>
+   Possible exit codes <br/>
+   Running pytest can result in six different exit codes: <br/>
 
-#### (1) Add Environment Specific Checks
+   - Exit code 0 <br/>
+     All tests were collected and passed successfully </br/>
+
+   - Exit code 1 <br/>
+     Tests were collected and run but some of the tests failed
+
+   - Exit code 2 <br/>
+     Test execution was interrupted by the user
+
+   - Exit code 3 <br/>
+     Internal error happened while executing tests
+
+   - Exit code 4 <br/>
+     pytest command line usage error
+
+   - Exit code 5 <br/>
+     No tests were collectedkkkk#### (1) Add Environment Specific Checks <br/>
+     
 - Check Python 2.x, 3.x versions
 - Check SCL Python 3.x
 - Check VirtualEnv 
