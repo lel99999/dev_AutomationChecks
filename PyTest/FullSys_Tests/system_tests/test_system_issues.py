@@ -5,7 +5,8 @@ import os.path
 def test_checktmpdir():
     """ Check SAS Scratch Dir/Tmp Dir """
     _tmpdir = '/sastmp'
-    assert os.path.isdir(_tmpdir)
+#    assert os.path.isdir(_tmpdir)
+    assert 1 == 0
 
 #@pytest.mark.custom
 def test_issue_146():
