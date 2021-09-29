@@ -9,16 +9,17 @@ _tmpPath = "/tmp/autocheck"
 _tmpVenv3Path = "/tmp/venv3"
 
 def cmdRun(_cmd):
-  try:
-      _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
-      msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-      _error = "No Errors"
-  except:
-      _error = sys.exc_info()[0]
-  print("--- " + _cmd + _error)
+#_error = sys.exc_info()[0]
+    try:
+        _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
+        msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
+        _error = "No Errors"
+    except:
+        _error = sys.exc_info()[0]
+print("--- " + _cmd + _error)
 # print("--- " + _tmpStdOut)
-
-  # outfile = open("/tmp/testRun.txt","w")
+  
+# outfile = open("/tmp/testRun.txt","w")
 # outfile = open("/tmp/testRun.txt","a")
 # outfile.write(msg)
 # outfile.close()
