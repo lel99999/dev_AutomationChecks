@@ -8,15 +8,16 @@ _hoststring = _uid + "@" + _hostname
 _tmpPath = "/tmp/autocheck"
 _tmpVenv3Path = "/tmp/venv3"
 
-def cmdRun(_cmd):
-try:
-    _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
-    msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-except:
-    print("Error: ", sys.exc_info()[0], "occurred.")
+def cmdRun(runcmd):
+_cmd = runcmd
+    try:
+        _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
+        msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
+    except:
+        print("Error: ", sys.exc_info()[0], "occurred.")
 print("--- " + _cmd)
 # print("--- " + _tmpStdOut)
-  
+      
 # outfile = open("/tmp/testRun.txt","w")
 # outfile = open("/tmp/testRun.txt","a")
 # outfile.write(msg)
