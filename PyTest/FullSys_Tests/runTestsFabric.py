@@ -1,4 +1,4 @@
-import os
+import os,sys
 #import shutil
 from fabric import Connection
 
@@ -9,9 +9,13 @@ _tmpPath = "/tmp/autocheck"
 _tmpVenv3Path = "/tmp/venv3"
 
 def cmdRun(_cmd):
-  _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
-  msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-  print("--- " + _cmd)
+  try:
+      _tmpStdOut = Connection(_hoststring).run(_cmd,hide=True).stdout.strip()
+      msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
+      _error = "No Errors"
+  except:
+      _error = sys.exc_info()[0]
+  print("--- " + _cmd + _error)
 # print("--- " + _tmpStdOut)
 
   # outfile = open("/tmp/testRun.txt","w")
@@ -74,7 +78,9 @@ cmdRun(cmdMkReportDir)
 cmdRun(cmdModReportDirPerm)
 cmdRun(cmdModCacheDirPerm)
 cmdRun(cmdPipReq)
+
 cmdRun(cmdPyTest_wReport)
+
 cmdRun(cmdReportStage)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
