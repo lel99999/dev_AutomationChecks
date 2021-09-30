@@ -66,6 +66,7 @@ from datetime import datetime
 now = datetime.now()
 _datetime = now.strftime("%m-%d-%Y--%H:%M:%S")
 cmdReportStage = "cp /tmp/autocheck/report/testReport.html " + "/opt/pytest_stage/pytestReport_" + _datetime + ".html" 
+cmdSymLinkReport = "ln -s /opt/pytest_stage/pytestReport_" + _datetime + ".html /opt/pytest_stage/index.html"
 
 cmdRun(cmdCleanDir)
 cmdRun(cmdCleanVenv)
