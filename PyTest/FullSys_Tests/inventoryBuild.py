@@ -1,16 +1,22 @@
+from ansible.parsing.dataloader import DataLoader
+from ansible.inventory.manager import InvtoryManager
 
-variable_manager = VariableManager()
-loader = DataLoader()
+_inventory_file = '/tmp/inventory'
+_dataloader = DataLoader()
+_inventory = InventoryManager(loader = _dataloader,sources=[_inventory_file])
+
+#variable_manager = VariableManager()
+#loader = DataLoader()
 
 #  Ansible: Load inventory
-inventory = Inventory(
-    loader = loader,
-    variable_manager = variable_manager,
-    host_list = 'hosts', '/tmp/inventory'
-)
+#inventory = Inventory(
+#    loader = loader,
+#    variable_manager = variable_manager,
+#    host_list = '/tmp/inventory'
+#)
 
 
-def serialize(inventory):
+def serialize(_inventory):
     if not isinstance(inventory, Inventory):
         return dict()
 
