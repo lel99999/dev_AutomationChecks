@@ -1,5 +1,5 @@
 from ansible.parsing.dataloader import DataLoader
-from ansible.inventory.manager import InvtoryManager
+from ansible.inventory.manager import InventoryManager
 
 _inventory_file = '/tmp/inventory'
 _dataloader = DataLoader()
@@ -16,7 +16,7 @@ _inventory = InventoryManager(loader = _dataloader,sources=[_inventory_file])
 #)
 
 
-def serialize(_inventory):
+def serialize(inventory):
     if not isinstance(inventory, Inventory):
         return dict()
 
@@ -35,5 +35,5 @@ def serialize(_inventory):
 
     return data
 
-serialized_inventory = serialize(inventory)
+serialized_inventory = serialize(_inventory)
 print(serialized_inventory)
