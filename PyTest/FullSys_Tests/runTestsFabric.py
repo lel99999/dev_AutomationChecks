@@ -59,7 +59,8 @@ cmdModCacheDirPerm = "chmod -R 777 " + _tmpPath + "/PyTest/FullSys_Tests"
 
 cmdPipReq = "/tmp/venv3/bin/pip3 install -r " + _tmpPath + "/PyTest/FullSys_Tests/requirements.txt"
 cmdPyTest = "pytest"
-cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/index.html" + " -rs -v"
+cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/home/dtwork/applications/static/autocheck/index.html" + " -rs -v"
+#cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/index.html" + " -rs -v"
 #cmdPyTest_wReport = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/testReport.html" + " -rs -v"
 cmdPyTest_wReport_Fixture = "/tmp/venv3/bin/pytest " + _tmpPath + "/PyTest/FullSys_Tests/system_tests/" + " --html-report=/tmp/autocheck/report/testReport.html" + " -rs -v -m custom"
 
@@ -88,8 +89,8 @@ cmdRun(cmdPipReq)
 
 cmdRun(cmdPyTest_wReport)
 
-cmdRun(cmdReportStage)
-cmdRun(cmdReportLocalStage)
+#cmdRun(cmdReportStage)
+#cmdRun(cmdReportLocalStage)
 
 #testCleanDir = Connection(_hoststring).run(cmdCleanDir,hide=True)
 #testresult = Connection(_hoststring).run(cmdClone,hide=True)
