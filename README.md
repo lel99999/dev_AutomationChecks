@@ -257,3 +257,5 @@ driver = webdriver.Remote(
    command_executor='http://127.0.0.1:4444/wd/hub',
    desired_capabilities=DesiredCapabilities.HTMLUNITWITHJS)
 ```
+#### Report Notes
+      - Ensure report output directory has <filename>.html and output.json to build archive folder </br> 
