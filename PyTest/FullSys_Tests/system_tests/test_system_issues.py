@@ -8,7 +8,16 @@ _dictServersSvcs = defaultdict(list)
 for k,v in _servers_svcs:
     _dictServersSvcs[k].append(v)
 
-print("Dictionary of servers and list of svcs to check: ",_dictServersSvcs)
+print("Dictionary of servers and list of svcs to check: ", _dictServersSvcs)
+
+_dict_servers_svcs = {}
+_dict_servers_svcs["server1"] = ["check port","check path","check dir","check service"]
+_dict_servers_svcs["server2"] = ["check port","check service"] 
+_dict_servers_svcs["server3"] = ["check service"] 
+_dict_servers_svcs["server4"] = ["check path","check dir"]
+_dict_servers_svcs["server5"] = ["check service","check path","check port"] 
+
+print("Dictionary of servers/checks lists: ", _dict_servers_svcs)
 
 
 #@pytest.mark.sas
