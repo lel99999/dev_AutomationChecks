@@ -1,4 +1,6 @@
 import pytest
+#import pycurl
+import requests
 import os.path
 from collections import defaultdict
 
@@ -36,6 +38,11 @@ _dictServers["server5"].append(_addSvcChecks3)
 
 print("(3) Dictionary of servers/checks lists: ", _dictServers)
 
+def test_endpoint_GET(aURL):
+    _r = requests.get(aURL)
+    print(_r.text)
+
+test_endpoint_GET("https://www.google.com")
 
 #@pytest.mark.sas
 def test_checktmpdir():
