@@ -8,7 +8,8 @@ def show_all_svcs():
         ) for p in psutil.pids()]
 
 
-#print(show_all_svcs())
+print("all_svcs ----------------------------------------------------------")
+print(show_all_svcs())
 
 def show_all_kv_svcs():
     _kv_svcs = {}
@@ -23,8 +24,9 @@ def show_all_kv_svcs():
 #       psutil.Process(p).status()
 #       } for p in psutil.pids()]
 
-
-#print(show_all_svcs())
+print("\n")
+print("kv_svcs ----------------------------------------------------------")
+print(show_all_kv_svcs())
 
 def show_running_svcs():
     _runsvcs = {}
@@ -35,8 +37,9 @@ def show_running_svcs():
             _runsvcs.update(_tmpDic)
     return _runsvcs
 
-
-#print(show_running_svcs())
+print("\n")
+print("running_svcs ----------------------------------------------------------")
+print(show_running_svcs())
 
 def show_running_svcs_DictComp():
     _dictTest = {'cron':'na','cups':'na'}
