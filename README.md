@@ -38,6 +38,7 @@ Exploratory Development with Automated System Checks and Reporting
   - numpy
   - scipy
   - pandas
+- Check known Services
 
 #### Visual Profiling
 - Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
@@ -267,12 +268,14 @@ driver = webdriver.Remote(
 #### CURL Notes
 - Return only HTTP headers of a URL
   ```
-  $curl -I https://www.abc.com
+  $curl -I https://www.example.com
   ```
 
 - Saving the result of a curl command
   ```
   $curl -o filename.ex1 https://www.example.com/filename.ex1
+
+  # Save with original filename
   $curl -O https://www.example.com/filename.example
   ```
 
@@ -284,5 +287,10 @@ driver = webdriver.Remote(
 - Generating additional info (adding -v)
   ```
   $curl -H "X-Header: value" https://www.example.com -v
+  ```
+- Download Multiple files
+  ```
+  $curl -O http://mirrors.edge.kernel.org/archlinux/iso/2018.06.01/archlinux-2018.06.01-x86_64.iso  \
+  $     -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
   ```
 
