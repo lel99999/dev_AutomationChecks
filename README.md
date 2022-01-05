@@ -263,3 +263,26 @@ driver = webdriver.Remote(
 #### SAS Testing Information
 - [https://communities.sas.com/t5/SAS-Communities-Library/Test-Driven-Data-Science-Writing-Unit-Tests-for-SASPy-Python/ta-p/457065](https://communities.sas.com/t5/SAS-Communities-Library/Test-Driven-Data-Science-Writing-Unit-Tests-for-SASPy-Python/ta-p/457065) <br/>
 - [https://github.com/sassoftware/saspy](https://github.com/sassoftware/saspy) <br/>
+
+#### CURL Notes
+- Return only HTTP headers of a URL
+  ```
+  $curl -I https://www.abc.com
+  ```
+
+- Saving the result of a curl command
+  ```
+  $curl -o filename.ex1 https://www.example.com/filename.ex1
+  $curl -O https://www.example.com/filename.example
+  ```
+
+- Adding an additional HTTP request header
+  ```
+  $curl -H "X-Header: value" https://www.example.com
+  ```
+
+- Generating additional info (adding -v)
+  ```
+  $curl -H "X-Header: value" https://www.example.com -v
+  ```
+
