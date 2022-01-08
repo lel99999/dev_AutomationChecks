@@ -295,20 +295,30 @@ driver = webdriver.Remote(
   ```
 - Curl with Proxy (using -x or -proxy switch)
   ```
-  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex"
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/"
   
   or
   
-  $curl -proxy "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex"
+  $curl -proxy "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/"
   
   ## For some curl versions, need to use following:
       
   $curl -x http://proxy_server:proxy_port --proxy-user username:password -L http://url
   ### If there are SSL certificate errors, add -k
-  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex" -k
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/" -k
   ```
   - Use environment variables to set proxy
     ```
     $export http_proxy=http://your.proxy.server:port/
     $export https_proxy=https://your.proxy.server:port/
+    ```
+  - If using a SOCKS proxy instead of http/https, use --socks5 switch
+    ```
+    $curl --socks5 <proxy_ip>:<proxy_port> http://example.com/
+    ```
+  - Alias Proxyon / Proxyoff -switch by adding to .bashrc 
+    ```
+    $alias proxyon="export http_proxy='http://YOURPROXY:YOURPORT';export https_proxy='http://YOURPROXY:YOURPORT'"
+    $alias proxyoff="export http_proxy='';export https_proxy=''"
+
     ```
