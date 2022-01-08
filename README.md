@@ -293,4 +293,13 @@ driver = webdriver.Remote(
   $curl -O http://mirrors.edge.kernel.org/archlinux/iso/2018.06.01/archlinux-2018.06.01-x86_64.iso  \
   $     -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
   ```
-
+- Curl with Proxy (using -x or -proxy switch)
+  ```
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex"
+  
+  or
+  
+  $curl -proxy "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex"
+  ### If there are SSL certificate errors, add -k
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex" -k
+  ```
