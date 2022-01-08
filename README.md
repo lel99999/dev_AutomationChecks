@@ -300,6 +300,15 @@ driver = webdriver.Remote(
   or
   
   $curl -proxy "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex"
+  
+  ## For some curl versions, need to use following:
+      
+  $curl -x http://proxy_server:proxy_port --proxy-user username:password -L http://url
   ### If there are SSL certificate errors, add -k
   $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/file1.ex" -k
   ```
+  - Use environment variables to set proxy
+    ```
+    $export http_proxy=http://your.proxy.server:port/
+    $export https_proxy=https://your.proxy.server:port/
+    ```
