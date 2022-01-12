@@ -294,3 +294,20 @@ driver = webdriver.Remote(
   $     -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
   ```
 
+- Using environment variables (will apply system-wide)
+  - http_proxy: proxy will be used to access addresses that use http protocol
+  - https_proxy: proxy will be used to access addresses that use https protocol
+  ```
+  $export http_proxy="http://user:pwd@127.0.0.1:1234"
+  $export https_proxy="http://user:pwd@127.0.0.1:1234"
+
+  # to unset or clear the environment variables
+  $unset http_proxy
+  $unset https_proxy
+  ```
+
+- Using a curl config file [https://everything.curl.dev/cmdline/configfile](https://everything.curl.dev/cmdline/configfile)
+  - Tell curl to use command-line options from a specific file with the -K/--config options
+  ```
+  $curl -K cmdline_file.txt http://www.example.com
+  ```
