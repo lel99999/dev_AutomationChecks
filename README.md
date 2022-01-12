@@ -294,6 +294,35 @@ driver = webdriver.Remote(
   $     -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
   ```
 
+- Curl with Proxy (using -x or -proxy switch)
+  ```
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/"
+  
+  or
+  
+  $curl -proxy "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/"
+  
+  ## For some curl versions, need to use following:
+      
+  $curl -x http://proxy_server:proxy_port --proxy-user username:password -L http://url
+  ### If there are SSL certificate errors, add -k
+  $curl -x "http://user:pwd@<proxy_ip>:<port>" "http://www.example.com/" -k
+  ```
+  - Use environment variables to set proxy
+    ```
+    $export http_proxy=http://your.proxy.server:port/
+    $export https_proxy=https://your.proxy.server:port/
+    ```
+  - If using a SOCKS proxy instead of http/https, use --socks5 switch
+    ```
+    $curl --socks5 <proxy_ip>:<proxy_port> http://example.com/
+    ```
+  - Alias Proxyon / Proxyoff -switch by adding to .bashrc 
+    ```
+    $alias proxyon="export http_proxy='http://YOURPROXY:YOURPORT';export https_proxy='http://YOURPROXY:YOURPORT'"
+    $alias proxyoff="export http_proxy='';export https_proxy=''"
+
+    ```
 - Using environment variables (will apply system-wide)
   - http_proxy: proxy will be used to access addresses that use http protocol
   - https_proxy: proxy will be used to access addresses that use https protocol
