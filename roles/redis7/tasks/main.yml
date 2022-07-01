@@ -1,0 +1,121 @@
+---
+
+- name: Create Redis user
+  user:
+    name: "{{ redis_user }}"
+    system: yes
+    home: "{{ redis_db_dir }}"
+    shell: "{{ redis_user_shell }}"
+    state: present
+    groups: "{{ redis_user_groups | join(',') }}"
+  tags:
+    - redis
+
+- name: Install the Redis package
+  yum:
+   name: redis
+   state: present
+   disable_gpg_check: yes
+  with_items:
+    - redis
+    - rh-redis5
+  tags:
+    - redis
+
+- name: Make Configuration directory
+  file:
+   path: "{{ redis_config_directory }}"   ## /etc/redis
+   state: directory
+   mode: 0755
+  tags:
+    - redis
+
+- name: Make Redis working directory
+  file:
+   path: "{{ redis_working_directory }}"   ## /var/redis
+   state: directory
+   mode: 0755
+  tags:
+    - redis
+
+- name: Make Redis logfile
+  file:
+   path: "{{ redis_logfile }}"
+   state: touch
+   owner: "{{ redis_user }}"
+   group: "{{ redis_user }}"
+   mode: 1755
+  tags:
+    - redis
+
+- name: Copy the Redis configuration file
+  template:
+   src: redis.conf.j2
+   dest: "{{ redis_config_file }}"      ## /etc/redis/6379.conf
+  tags:
+    - redis
+
+- name: Check if Chain exists
+# command: iptables -L | grep -q {{ item }}
+  shell: iptables -L | grep {{ item }}
+# shell: iptables -L | grep $item 
+  with_items:
+    - "{{ iptables_chain }}"   
+  #grep will exit with 1 when no results found
+  register: ipt_chains
+  ignore_errors: true
+  become: yes
+  become_method: sudo
+
+#- set_fact:
+#    result: "{{ (ipt_chains.stdout | from_json).results.rc }}"
+
+#- debug:
+#    msg: result
+
+#- debug: msg={{ ipt_chains }}
+- debug:
+    msg: "{{ ipt_chains.results[0].rc }}"
+# with_items: "{{ iptables_chains.results | json_query('[].keys.keys(@)') }}"
+
+#- debug: 
+#    msg: "{{ item.rc }} has keys {{ item.key.keys() }}"
+#  with_items: "{{ ipt_chains.results }}"
+
+- name: Create IPTables Chain (if one doesn't exist)
+  command: "{{ item }}"
+  with_items:
+    - "iptables -F {{ iptables_chain }}"
+    - "iptables -X {{ iptables_chain }}"
+# when: "{{ iptables_chain }} in {{ ipt_chains }}"
+  when: ipt_chains.results[0].rc | default('') != 1
+
+- name: Create IPTables Chain 
+  command: "{{ item }}"
+  with_items:
+    - "iptables -N {{ iptables_chain }}"
+# command: "iptables -N {{ iptables_chain }}"
+#  ansible.builtin.iptables:
+#   chain: "{{ iptables_chain }}"
+#   chain_management: true
+#   state: present
+# when: iptables_config and deploy_iptables
+  become: yes
+  become_method: sudo
+
+- name: Open port 6379 in iptables
+  command: "iptables -I {{ iptables_chain }} 1 -m state --state NEW -p tcp --dport {{ redis_port }} -j ACCEPT"
+# command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport {{ redis_port }} -j ACCEPT"
+  when: iptables_config and deploy_iptables
+  tags:
+    - redis
+
+- name: Ensure redis is running
+  service:
+#  name: "{{ redis_service }}"
+   name: rh-redis5-redis
+   state: started
+   enabled: yes
+  when: not custom_repo # Redis doesn't have an init file when using our RPM
+  tags:
+    - redis
