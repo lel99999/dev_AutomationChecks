@@ -39,6 +39,8 @@ Exploratory Development with Automated System Checks and Reporting
   - scipy
   - pandas
 - Check known Services
+- Add Redis for caching capabilities
+
 
 #### Visual Profiling
 - Visual Profiler for Python [https://github.com/nvdv/vprof](https://github.com/nvdv/vprof) <br/>
