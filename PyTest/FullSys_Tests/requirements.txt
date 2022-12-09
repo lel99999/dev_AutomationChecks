@@ -3,7 +3,7 @@ backports.entry-points-selectable==1.1.0
 bcrypt==3.2.0
 biopython==1.79
 cached-property==1.5.2
-certifi==2021.5.30
+certifi==2022.12.7
 cffi==1.14.6
 charset-normalizer==2.0.4
 cryptography==3.4.8
