@@ -6,7 +6,7 @@ cached-property==1.5.2
 certifi==2021.5.30
 cffi==1.14.6
 charset-normalizer==2.0.4
-cryptography==3.4.8
+cryptography==39.0.1
 cycler==0.10.0
 distlib==0.3.2
 distro==1.6.0
